@@ -105,7 +105,7 @@ const QuestionsDetails = () => {
     //     }]
     // }]
     const location= useLocation();
-    const url="http://localhost:3000"
+    const url="https://stack-overflow-clone-0.onrender.com"
 
     const handleShare=()=>{
         copy(url+location.pathname)
