@@ -1,25 +1,64 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Askquestions.css"
 import {useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { askquestion } from '../../actions/question'
-
+import axios from "axios"
 
 function AskQuestions() {
    const [questionTitle, setQuestionTitle] =useState("")
    const [questionBody, setQuestionBody] = useState("")
    const [questionTags, setQuestionTags] = useState("")
+  // const [no,setno]=useState(10);
    
    const dispatch = useDispatch();
    const User = useSelector((state) =>(state.currentUserReducer))
+    
+   
+//    useEffect(()=>{
+//     const toshow=getcount();
+//     setno(toshow);
+//    })
+
+//    const getcount=async()=>{
+//     const email= User.result.email;
+   
+//     const validCount = await axios.post(`http://localhost:5000/getCount`,{email});
+//     return validCount.data.count;
+//    }
+   //
+  
+   const subscription = useSelector(state => state.subscriptionReducer);
+   //
    const navigate =useNavigate();
+   
 
-   const handleSubmit =(e)=>{
+   const handleSubmit =async(e)=>{
     e.preventDefault();
-    // console.log({questionTitle,questionBody,questionTags})
+    const email= User.result.email;
+    console.log(email);
+    const validCount = await axios.post(`https://stackoverflow-clone-ctpf.onrender.com/getCount`,{email});
+    
+    console.log(validCount+"from askquestion");
+    
+    if(validCount.data.count>0){
+     
+    
+    console.log({questionTitle,questionBody,questionTags})
+    console.log(subscription);
     dispatch(askquestion({questionTitle,questionBody,questionTags, userPosted: User.result.name,userId: User?.result?._id},navigate))
+    console.log(User.result.email)
+    //const email= User.result.email
+    const countit = await axios.post(`https://stackoverflow-clone-ctpf.onrender.com/update`,{email});
+    console.log(countit);
+    
+    }
+    else{
+        alert("you have reached your daily limit")
+    }
 
+     
    }
    const handleEnter=(e)=>{
     if(e.key==='Enter'){

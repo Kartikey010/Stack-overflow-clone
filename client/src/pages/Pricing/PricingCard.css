@@ -1,0 +1,68 @@
+.pricingCard{
+    width: 33vw;
+    /* background-color: beige; */
+    margin: 15px;
+}
+
+.pricing-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pricingCard img{
+    width: 16vw;
+    padding: 6vw;
+}
+.pricing{
+    display: flex;
+    justify-content: space-around;
+}
+.border{
+    height: 1px;
+    background-color: #f2740d;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.pricing-heading{
+    font-family: Roboto Slab;
+    font-weight: 700;
+    line-height: var(--lh-sm)!important;
+}
+.image-div{
+    justify-content: center;
+    display: flex;
+}
+
+.success{
+    background-color: #D3D3D3;
+    color: rgb(198, 194, 194);
+    padding-top: 106px;
+    text-align: center;
+    
+}
+.rotate{
+    transform: rotate(-24deg);
+ 
+    font-size: 4vw;
+}
+.pricing-btn{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #fc9744;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border:#fc9744;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 889px) {
+    .pricing{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricingCard{
+        width: 100vw;
+    }
+  }

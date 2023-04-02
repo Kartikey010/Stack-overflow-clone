@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const API = axios.create({ baseURL: "https://stack-overflow-clone-0.onrender.com"})
+const API = axios.create({ baseURL: "https://stackoverflow-clone-ctpf.onrender.com"})
+//const API = axios.create({ baseURL: "http://localhost:5000"})
 ////adds more security
 API.interceptors.request.use((req)=>{
     if(localStorage.getItem("Profile")){
@@ -23,3 +24,5 @@ export const deleteAnswer =(id,answerId, noOfAnswers) => API.patch(`/answer/dele
 
 export const fetchAllUsers =()=> API.get("/user/getAllUsers")
 export const updateProfile =(id,updateData)=> API.patch(`/user/update/${id}`,updateData)
+
+//export const subscribeFromApi=()=> API.post("/Pricing",)

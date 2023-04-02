@@ -8,6 +8,7 @@ import DisplayQuestion from './pages/Questions/DisplayQuestion'
 import Tags from './pages/Tags/Tags'
 import Users from './pages/Users/Users'
 import UserProfile from './pages/UserProfile/UserProfile'
+import Pricing from './pages/Pricing/Pricing.js'
 
 const  AllRoutes=()=> {
   return (
@@ -22,6 +23,7 @@ const  AllRoutes=()=> {
         <Route path="/Tags" element={<Tags/>} />
         <Route path="/Users" element={<Users/>}/>
         <Route path="/Users/:id" element={<UserProfile/>}/>
+        <Route path="/Pricing" element={<Pricing/>}/>
       </Routes>
     
     

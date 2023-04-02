@@ -43,6 +43,7 @@ function Navbar() {
         <Link to="/" className="nav-item nav-btn">About</Link>
         <Link to="/" className="nav-item nav-btn">Products</Link>
         <Link to="/" className="nav-item nav-btn">For Teams</Link>
+        <Link to='/Pricing' className='nav-item nav-btn'>Pricing</Link>
         <form>
             <input type="text" placeholder='Search..' />
             <img src={search} alt="search" width="18" className="search-icon"/>

@@ -105,7 +105,8 @@ const QuestionsDetails = () => {
     //     }]
     // }]
     const location= useLocation();
-    const url="https://stack-overflow-clone-0.onrender.com"
+    //const url="localhost:wala to test "
+    const url="https://stackoverflow-clone-ctpf.onrender.com"
 
     const handleShare=()=>{
         copy(url+location.pathname)
