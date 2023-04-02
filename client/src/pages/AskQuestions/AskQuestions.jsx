@@ -54,6 +54,9 @@ function AskQuestions() {
     console.log(countit);
     
     }
+    else if(validCount.data.count==-1){
+        alert("Please purchase a plan before posting")
+    }
     else{
         alert("you have reached your daily limit")
     }
